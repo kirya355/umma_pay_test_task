@@ -1,0 +1,104 @@
+Performing hot restart...
+Syncing files to device HRY LX1T...
+Restarted application in 2 156ms.
+I/flutter (25250): state.listItems: null
+I/flutter (25250): ══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+I/flutter (25250): The following assertion was thrown during layout:
+I/flutter (25250): A RenderFlex overflowed by 24 pixels on the right.
+I/flutter (25250):
+I/flutter (25250): The relevant error-causing widget was:
+I/flutter (25250):   Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+I/flutter (25250):
+I/flutter (25250): The overflowing RenderFlex has an orientation of Axis.horizontal.
+I/flutter (25250): The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+I/flutter (25250): black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+I/flutter (25250): Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+I/flutter (25250): RenderFlex to fit within the available space instead of being sized to their natural size.
+I/flutter (25250): This is considered an error condition because it indicates that there is content that cannot be
+I/flutter (25250): seen. If the content is legitimately bigger than the available space, consider clipping it with a
+I/flutter (25250): ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+I/flutter (25250): like a ListView.
+I/flutter (25250): The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING:
+I/flutter (25250):   creator: Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+I/flutter (25250):     _InkFeatures-[GlobalKey#7c369 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+I/flutter (25250):     CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← _MaterialInterior ← Material ← ⋯
+I/flutter (25250):   parentData: offset=Offset(0.0, 0.0) (can use size)
+I/flutter (25250):   constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
+I/flutter (25250):   size: Size(316.0, 142.0)
+I/flutter (25250):   direction: horizontal
+I/flutter (25250):   mainAxisAlignment: start
+I/flutter (25250):   mainAxisSize: max
+I/flutter (25250):   crossAxisAlignment: center
+I/flutter (25250):   textDirection: ltr
+I/flutter (25250):   verticalDirection: down
+I/flutter (25250): ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+I/flutter (25250): ════════════════════════════════════════════════════════════════════════════════════════════════════
+I/flutter (25250): Another exception was thrown: A RenderFlex overflowed by 8.0 pixels on the right.
+I/flutter (25250): listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
+I/flutter (25250): state.listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
+I/flutter (25250): state.listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
+
+══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 24 pixels on the right.
+
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
+black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
+RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be
+seen. If the content is legitimately bigger than the available space, consider clipping it with a
+ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
+like a ListView.
+The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING:
+  creator: Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+    _InkFeatures-[GlobalKey#7c369 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+    CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← _MaterialInterior ← Material ← ⋯
+  parentData: offset=Offset(0.0, 0.0) (can use size)
+  constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
+  size: Size(316.0, 142.0)
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: A RenderFlex overflowed by 8.0 pixels on the right.
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The following assertion was thrown during layout:
+A RenderFlex overflowed by 24 pixels on the right.
+
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+The overflowing RenderFlex has an orientation of Axis.horizontal.
+The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+
+Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the RenderFlex to fit within the available space instead of being sized to their natural size.
+This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.
+
+The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING
+...  parentData: offset=Offset(0.0, 0.0) (can use size)
+...  constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
+...  size: Size(316.0, 142.0)
+...  direction: horizontal
+...  mainAxisAlignment: start
+...  mainAxisSize: max
+...  crossAxisAlignment: center
+...  textDirection: ltr
+...  verticalDirection: down
+◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+A RenderFlex overflowed by 8.0 pixels on the right.
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
