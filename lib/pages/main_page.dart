@@ -58,9 +58,15 @@ class MainPage extends StatelessWidget {
               Column(
                 children: [
                   //хочу переносить этот текст
-                  Text(
-                    record.title,
-                    textAlign: TextAlign.left,
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          record.title,
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               )

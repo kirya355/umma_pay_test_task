@@ -1,104 +1,589 @@
 Performing hot restart...
 Syncing files to device HRY LX1T...
-Restarted application in 2 156ms.
+Restarted application in 2 456ms.
 I/flutter (25250): state.listItems: null
 I/flutter (25250): ══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
-I/flutter (25250): The following assertion was thrown during layout:
-I/flutter (25250): A RenderFlex overflowed by 24 pixels on the right.
-I/flutter (25250):
-I/flutter (25250): The relevant error-causing widget was:
-I/flutter (25250):   Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
-I/flutter (25250):
-I/flutter (25250): The overflowing RenderFlex has an orientation of Axis.horizontal.
-I/flutter (25250): The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
-I/flutter (25250): black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
-I/flutter (25250): Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
-I/flutter (25250): RenderFlex to fit within the available space instead of being sized to their natural size.
-I/flutter (25250): This is considered an error condition because it indicates that there is content that cannot be
-I/flutter (25250): seen. If the content is legitimately bigger than the available space, consider clipping it with a
-I/flutter (25250): ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
-I/flutter (25250): like a ListView.
-I/flutter (25250): The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING:
+I/flutter (25250): The following assertion was thrown during performLayout():
+I/flutter (25250): RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+I/flutter (25250): When a row is in a parent that does not provide a finite width constraint, for example if it is in a
+I/flutter (25250): horizontal scrollable, it will try to shrink-wrap its children along the horizontal axis. Setting a
+I/flutter (25250): flex on a child (e.g. using Expanded) indicates that the child is to expand to fill the remaining
+I/flutter (25250): space in the horizontal direction.
+I/flutter (25250): These two directives are mutually exclusive. If a parent is to shrink-wrap its child, the child
+I/flutter (25250): cannot simultaneously expand to fit its parent.
+I/flutter (25250): Consider setting mainAxisSize to MainAxisSize.min and using FlexFit.loose fits for the flexible
+I/flutter (25250): children (using Flexible rather than Expanded). This will allow the flexible children to size
+I/flutter (25250): themselves to less than the infinite remaining space they would otherwise be forced to take, and
+I/flutter (25250): then will cause the RenderFlex to shrink-wrap the children rather than expanding to fit the maximum
+I/flutter (25250): constraints provided by the parent.
+I/flutter (25250): If this message did not help you determine the problem, consider using debugDumpRenderTree():
+I/flutter (25250):   https://flutter.dev/debugging/#rendering-layer
+I/flutter (25250):   http://api.flutter.dev/flutter/rendering/debugDumpRenderTree.html
+I/flutter (25250): The affected RenderFlex is:
+I/flutter (25250):   RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE(creator: Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ← _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ← CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯, parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size), constraints: BoxConstraints(unconstrained), size: MISSING, direction: horizontal, mainAxisAlignment: start, mainAxisSize: max, crossAxisAlignment: center, textDirection: ltr, verticalDirection: down)
+I/flutter (25250): The creator information is set to:
+I/flutter (25250):   Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+I/flutter (25250):   _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+I/flutter (25250):   CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯
+I/flutter (25250): The nearest ancestor providing an unbounded width constraint is: RenderFlex#fe054 relayoutBoundary=up1 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
 I/flutter (25250):   creator: Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
-I/flutter (25250):     _InkFeatures-[GlobalKey#7c369 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+I/flutter (25250):     _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
 I/flutter (25250):     CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← _MaterialInterior ← Material ← ⋯
 I/flutter (25250):   parentData: offset=Offset(0.0, 0.0) (can use size)
 I/flutter (25250):   constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
-I/flutter (25250):   size: Size(316.0, 142.0)
+I/flutter (25250):   size: MISSING
 I/flutter (25250):   direction: horizontal
 I/flutter (25250):   mainAxisAlignment: start
 I/flutter (25250):   mainAxisSize: max
 I/flutter (25250):   crossAxisAlignment: center
 I/flutter (25250):   textDirection: ltr
 I/flutter (25250):   verticalDirection: down
-I/flutter (25250): ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+I/flutter (25250): See also: https://flutter.dev/layout/
+I/flutter (25250): If none of the above helps enough to fix this problem, please don't hesitate to file a bug:
+I/flutter (25250):   https://github.com/flutter/flutter/issues/new?template=BUG.md
+I/flutter (25250):
+I/flutter (25250): The relevant error-causing widget was:
+I/flutter (25250):   Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
+I/flutter (25250):
+I/flutter (25250): When the exception was thrown, this was the stack:
+I/flutter (25250): #0      RenderFlex.performLayout.<anonymous closure> (package:flutter/src/rendering/flex.dart:712:11)
+I/flutter (25250): #1      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:739:10)
+I/flutter (25250): #2      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #3      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+I/flutter (25250): #4      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #5      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+I/flutter (25250): #6      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #7      RenderPositionedBox.performLayout (package:flutter/src/rendering/shifted_box.dart:396:13)
+I/flutter (25250): #8      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #9      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #10     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #11     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #12     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #13     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #14     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #15     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #16     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1269:11)
+I/flutter (25250): #17     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #18     RenderPadding.performLayout (package:flutter/src/rendering/shifted_box.dart:209:11)
+I/flutter (25250): #19     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #21     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #22     RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:270:13)
+I/flutter (25250): #23     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #24     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+I/flutter (25250): #25     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #26     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:173:11)
+I/flutter (25250): #27     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:495:7)
+I/flutter (25250): #28     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:242:7)
+I/flutter (25250): #29     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:401:14)
+I/flutter (25250): #30     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #31     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #32     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #33     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #34     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1269:11)
+I/flutter (25250): #35     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #36     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #37     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #38     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #39     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #40     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #41     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #42     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #43     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #44     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #45     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #46     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #47     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #48     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #49     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #50     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #51     RenderOffstage.performLayout (package:flutter/src/rendering/proxy_box.dart:3228:13)
+I/flutter (25250): #52     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #53     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #54     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #55     _RenderTheatre.performLayout (package:flutter/src/widgets/overlay.dart:702:15)
+I/flutter (25250): #56     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #57     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #58     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #59     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #60     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #61     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #62     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #63     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #64     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #65     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+I/flutter (25250): #66     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+I/flutter (25250): #67     RenderView.performLayout (package:flutter/src/rendering/view.dart:170:13)
+I/flutter (25250): #68     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:1632:7)
+I/flutter (25250): #69     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:889:18)
+I/flutter (25250): #70     RendererBinding.drawFrame (package:flutter/src/rendering/binding.dart:404:19)
+I/flutter (25250): #71     WidgetsBinding.drawFrame (package:flutter/src/widgets/binding.dart:867:13)
+I/flutter (25250): #72     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:286:5)
+I/flutter (25250): #73     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1117:15)
+I/flutter (25250): #74     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1056:9)
+I/flutter (25250): #75     SchedulerBinding.scheduleWarmUpFrame.<anonymous closure> (package:flutter/src/scheduler/binding.dart:865:7)
+I/flutter (25250): (elided 11 frames from class _RawReceivePortImpl, class _Timer, dart:async, and dart:async-patch)
+I/flutter (25250):
+I/flutter (25250): The following RenderObject was being processed when the exception was fired: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+I/flutter (25250):   creator: Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+I/flutter (25250):     _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+I/flutter (25250):     CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯
+I/flutter (25250):   parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+I/flutter (25250):   constraints: BoxConstraints(unconstrained)
+I/flutter (25250):   size: MISSING
+I/flutter (25250):   direction: horizontal
+I/flutter (25250):   mainAxisAlignment: start
+I/flutter (25250):   mainAxisSize: max
+I/flutter (25250):   crossAxisAlignment: center
+I/flutter (25250):   textDirection: ltr
+I/flutter (25250):   verticalDirection: down
+I/flutter (25250): This RenderObject had the following descendants (showing up to depth 5):
+I/flutter (25250):     child 1: RenderParagraph#3bf86 NEEDS-LAYOUT NEEDS-PAINT
+I/flutter (25250):       text: TextSpan
 I/flutter (25250): ════════════════════════════════════════════════════════════════════════════════════════════════════
-I/flutter (25250): Another exception was thrown: A RenderFlex overflowed by 8.0 pixels on the right.
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#5798e relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+I/flutter (25250): Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#ca684 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#4e7ef relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+I/flutter (25250): Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#5525a relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#d9453 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 I/flutter (25250): listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
 I/flutter (25250): state.listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
 I/flutter (25250): state.listItems: ListView(scrollDirection: vertical, primary: using primary controller, AlwaysScrollableScrollPhysics, padding: EdgeInsets(0.0, 20.0, 0.0, 0.0))
 
 ══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
-The following assertion was thrown during layout:
-A RenderFlex overflowed by 24 pixels on the right.
-
-The relevant error-causing widget was:
-  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
-
-The overflowing RenderFlex has an orientation of Axis.horizontal.
-The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and
-black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
-Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the
-RenderFlex to fit within the available space instead of being sized to their natural size.
-This is considered an error condition because it indicates that there is content that cannot be
-seen. If the content is legitimately bigger than the available space, consider clipping it with a
-ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex,
-like a ListView.
-The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING:
+The following assertion was thrown during performLayout():
+RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+When a row is in a parent that does not provide a finite width constraint, for example if it is in a
+horizontal scrollable, it will try to shrink-wrap its children along the horizontal axis. Setting a
+flex on a child (e.g. using Expanded) indicates that the child is to expand to fill the remaining
+space in the horizontal direction.
+These two directives are mutually exclusive. If a parent is to shrink-wrap its child, the child
+cannot simultaneously expand to fit its parent.
+Consider setting mainAxisSize to MainAxisSize.min and using FlexFit.loose fits for the flexible
+children (using Flexible rather than Expanded). This will allow the flexible children to size
+themselves to less than the infinite remaining space they would otherwise be forced to take, and
+then will cause the RenderFlex to shrink-wrap the children rather than expanding to fit the maximum
+constraints provided by the parent.
+If this message did not help you determine the problem, consider using debugDumpRenderTree():
+  https://flutter.dev/debugging/#rendering-layer
+  http://api.flutter.dev/flutter/rendering/debugDumpRenderTree.html
+The affected RenderFlex is:
+  RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE(creator: Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ← _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ← CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯, parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size), constraints: BoxConstraints(unconstrained), size: MISSING, direction: horizontal, mainAxisAlignment: start, mainAxisSize: max, crossAxisAlignment: center, textDirection: ltr, verticalDirection: down)
+The creator information is set to:
+  Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+  _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+  CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯
+The nearest ancestor providing an unbounded width constraint is: RenderFlex#fe054 relayoutBoundary=up1 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
   creator: Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
-    _InkFeatures-[GlobalKey#7c369 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+    _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
     CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← _MaterialInterior ← Material ← ⋯
   parentData: offset=Offset(0.0, 0.0) (can use size)
   constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
-  size: Size(316.0, 142.0)
+  size: MISSING
   direction: horizontal
   mainAxisAlignment: start
   mainAxisSize: max
   crossAxisAlignment: center
   textDirection: ltr
   verticalDirection: down
-◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
-════════════════════════════════════════════════════════════════════════════════════════════════════
-
-Another exception was thrown: A RenderFlex overflowed by 8.0 pixels on the right.
-
-════════ Exception caught by rendering library ═════════════════════════════════════════════════════
-The following assertion was thrown during layout:
-A RenderFlex overflowed by 24 pixels on the right.
+See also: https://flutter.dev/layout/
+If none of the above helps enough to fix this problem, please don't hesitate to file a bug:
+  https://github.com/flutter/flutter/issues/new?template=BUG.md
 
 The relevant error-causing widget was:
-  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
-The overflowing RenderFlex has an orientation of Axis.horizontal.
-The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
 
-Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the RenderFlex to fit within the available space instead of being sized to their natural size.
-This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.
+When the exception was thrown, this was the stack:
+#0      RenderFlex.performLayout.<anonymous closure> (package:flutter/src/rendering/flex.dart:712:11)
+#1      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:739:10)
+#2      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#3      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#5      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+#6      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#7      RenderPositionedBox.performLayout (package:flutter/src/rendering/shifted_box.dart:396:13)
+#8      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#9      RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#10     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#11     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#12     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#13     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#14     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#15     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#16     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1269:11)
+#17     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#18     RenderPadding.performLayout (package:flutter/src/rendering/shifted_box.dart:209:11)
+#19     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#20     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#21     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#22     RenderConstrainedBox.performLayout (package:flutter/src/rendering/proxy_box.dart:270:13)
+#23     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#24     RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+#25     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#26     MultiChildLayoutDelegate.layoutChild (package:flutter/src/rendering/custom_layout.dart:173:11)
+#27     _ScaffoldLayout.performLayout (package:flutter/src/material/scaffold.dart:495:7)
+#28     MultiChildLayoutDelegate._callPerformLayout (package:flutter/src/rendering/custom_layout.dart:242:7)
+#29     RenderCustomMultiChildLayoutBox.performLayout (package:flutter/src/rendering/custom_layout.dart:401:14)
+#30     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#31     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#32     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#33     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#34     _RenderCustomClip.performLayout (package:flutter/src/rendering/proxy_box.dart:1269:11)
+#35     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#36     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#37     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#38     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#39     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#40     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#41     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#42     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#43     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#44     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#45     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#46     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#47     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#48     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#49     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#50     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#51     RenderOffstage.performLayout (package:flutter/src/rendering/proxy_box.dart:3228:13)
+#52     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#53     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#54     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#55     _RenderTheatre.performLayout (package:flutter/src/widgets/overlay.dart:702:15)
+#56     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#57     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#58     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#59     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#60     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#61     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#62     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#63     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#64     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#65     RenderProxyBoxMixin.performLayout (package:flutter/src/rendering/proxy_box.dart:115:13)
+#66     RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#67     RenderView.performLayout (package:flutter/src/rendering/view.dart:170:13)
+#68     RenderObject._layoutWithoutResize (package:flutter/src/rendering/object.dart:1632:7)
+#69     PipelineOwner.flushLayout (package:flutter/src/rendering/object.dart:889:18)
+#70     RendererBinding.drawFrame (package:flutter/src/rendering/binding.dart:404:19)
+#71     WidgetsBinding.drawFrame (package:flutter/src/widgets/binding.dart:867:13)
+#72     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:286:5)
+#73     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1117:15)
+#74     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1056:9)
+#75     SchedulerBinding.scheduleWarmUpFrame.<anonymous closure> (package:flutter/src/scheduler/binding.dart:865:7)
+(elided 4 frames from class _RawReceivePortImpl, class _Timer, and dart:async-patch)
 
-The specific RenderFlex in question is: RenderFlex#8c80b relayoutBoundary=up1 OVERFLOWING
+The following RenderObject was being processed when the exception was fired: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE:
+  creator: Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+    _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ←
+    CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯
+  parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(unconstrained)
+  size: MISSING
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+This RenderObject had the following descendants (showing up to depth 5):
+    child 1: RenderParagraph#3bf86 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+      text: TextSpan
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#5798e relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+
+Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#ca684 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The following assertion was thrown during performLayout():
+RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+
+When a row is in a parent that does not provide a finite width constraint, for example if it is in a horizontal scrollable, it will try to shrink-wrap its children along the horizontal axis. Setting a flex on a child (e.g. using Expanded) indicates that the child is to expand to fill the remaining space in the horizontal direction.
+These two directives are mutually exclusive. If a parent is to shrink-wrap its child, the child cannot simultaneously expand to fit its parent.
+
+Consider setting mainAxisSize to MainAxisSize.min and using FlexFit.loose fits for the flexible children (using Flexible rather than Expanded). This will allow the flexible children to size themselves to less than the infinite remaining space they would otherwise be forced to take, and then will cause the RenderFlex to shrink-wrap the children rather than expanding to fit the maximum constraints provided by the parent.
+
+If this message did not help you determine the problem, consider using debugDumpRenderTree():
+  https://flutter.dev/debugging/#rendering-layer
+  http://api.flutter.dev/flutter/rendering/debugDumpRenderTree.html
+The affected RenderFlex is: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+  parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(unconstrained)
+  size: MISSING
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+...  child 1: RenderParagraph#3bf86 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+...    parentData: offset=Offset(0.0, 0.0); flex=1; fit=FlexFit.tight
+...    constraints: MISSING
+...    size: MISSING
+...    textAlign: left
+...    textDirection: ltr
+...    softWrap: wrapping at box width
+...    overflow: clip
+...    locale: en_US
+...    maxLines: unlimited
+...    text: TextSpan
+...      debugLabel: (englishLike body1 2014).merge(blackMountainView bodyText2)
+...      inherit: false
+...      color: Color(0xdd000000)
+...      family: Roboto
+...      size: 14.0
+...      weight: 400
+...      baseline: alphabetic
+...      decoration: TextDecoration.none
+...      "Обязательны ли 5 намазов?"
+The creator information is set to: Row ← Column ← Row ← Center ← Semantics ← DefaultTextStyle ← AnimatedDefaultTextStyle ← _InkFeatures-[GlobalKey#92878 ink renderer] ← NotificationListener<LayoutChangedNotification> ← CustomPaint ← _ShapeBorderPaint ← PhysicalShape ← ⋯
+The nearest ancestor providing an unbounded width constraint is: RenderFlex#fe054 relayoutBoundary=up1 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ...  parentData: offset=Offset(0.0, 0.0) (can use size)
 ...  constraints: BoxConstraints(0.0<=w<=316.0, 0.0<=h<=142.0)
-...  size: Size(316.0, 142.0)
+...  size: MISSING
 ...  direction: horizontal
 ...  mainAxisAlignment: start
 ...  mainAxisSize: max
 ...  crossAxisAlignment: center
 ...  textDirection: ltr
 ...  verticalDirection: down
-◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+
+See also: https://flutter.dev/layout/
+
+If none of the above helps enough to fix this problem, please don't hesitate to file a bug:
+  https://github.com/flutter/flutter/issues/new?template=BUG.md
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
+When the exception was thrown, this was the stack:
+#0      RenderFlex.performLayout.<anonymous closure> (package:flutter/src/rendering/flex.dart:712:11)
+#1      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:739:10)
+#2      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+#3      RenderFlex.performLayout (package:flutter/src/rendering/flex.dart:765:15)
+#4      RenderObject.layout (package:flutter/src/rendering/object.dart:1769:7)
+...
+The following RenderObject was being processed when the exception was fired: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+...  parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+...  constraints: BoxConstraints(unconstrained)
+...  size: MISSING
+...  direction: horizontal
+...  mainAxisAlignment: start
+...  mainAxisSize: max
+...  crossAxisAlignment: center
+...  textDirection: ltr
+...  verticalDirection: down
+RenderObject: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+  parentData: offset=Offset(0.0, 0.0); flex=null; fit=null (can use size)
+  constraints: BoxConstraints(unconstrained)
+  size: MISSING
+  direction: horizontal
+  mainAxisAlignment: start
+  mainAxisSize: max
+  crossAxisAlignment: center
+  textDirection: ltr
+  verticalDirection: down
+...  child 1: RenderParagraph#3bf86 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+...    parentData: offset=Offset(0.0, 0.0); flex=1; fit=FlexFit.tight
+...    constraints: MISSING
+...    size: MISSING
+...    textAlign: left
+...    textDirection: ltr
+...    softWrap: wrapping at box width
+...    overflow: clip
+...    locale: en_US
+...    maxLines: unlimited
+...    text: TextSpan
+...      debugLabel: (englishLike body1 2014).merge(blackMountainView bodyText2)
+...      inherit: false
+...      color: Color(0xdd000000)
+...      family: Roboto
+...      size: 14.0
+...      weight: 400
+...      baseline: alphabetic
+...      decoration: TextDecoration.none
+...      "Обязательны ли 5 намазов?"
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#4e7ef relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+
+Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#5525a relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#3e7ba relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Column file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:58:15
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#d9453 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+
+Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#25288 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: RenderBox was not laid out: RenderFlex#cbc85 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+
+Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#5798e relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+
+Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+
+Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+
+Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+I/flutter (25250): Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+I/flutter (25250): Another exception was thrown: RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#25288 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: RenderBox was not laid out: RenderFlex#cbc85 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+I/flutter (25250): Another exception was thrown: 'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+I/flutter (25250): Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+The relevant error-causing widget was:
+  Center file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:50:16
+════════════════════════════════════════════════════════════════════════════════════════════════════
+I/chatty  (25250): uid=10247(com.example.testapplication) 1.ui identical 10 lines
+I/flutter (25250): Another exception was thrown: NoSuchMethodError: The method '>' was called on null.
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
 ════════════════════════════════════════════════════════════════════════════════════════════════════
 
 ════════ Exception caught by rendering library ═════════════════════════════════════════════════════
-A RenderFlex overflowed by 8.0 pixels on the right.
+RenderBox was not laid out: RenderFlex#ca684 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Column file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:58:15
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#4e7ef relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+The relevant error-causing widget was:
+  Center file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:50:16
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#5525a relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Column file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:58:15
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#d9453 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+The relevant error-causing widget was:
+  Center file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:50:16
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderFlex children have non-zero flex but incoming width constraints are unbounded.
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:61:19
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#25288 relayoutBoundary=up3 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Column file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:58:15
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+RenderBox was not laid out: RenderFlex#cbc85 relayoutBoundary=up2 NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1702 pos 12: 'hasSize'
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+'package:flutter/src/rendering/shifted_box.dart': Failed assertion: line 324 pos 12: 'child.hasSize': is not true.
+The relevant error-causing widget was:
+  Center file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:50:16
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The method '>' was called on null.
+Receiver: null
+Tried calling: >(1e-10)
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The method '>' was called on null.
+Receiver: null
+Tried calling: >(1e-10)
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The method '>' was called on null.
+Receiver: null
+Tried calling: >(1e-10)
+The relevant error-causing widget was:
+  Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+════════ Exception caught by rendering library ═════════════════════════════════════════════════════
+The method '>' was called on null.
+Receiver: null
+Tried calling: >(1e-10)
 The relevant error-causing widget was:
   Row file:///C:/Users/kiril/AndroidStudioProjects/test_application/lib/pages/main_page.dart:51:18
 ════════════════════════════════════════════════════════════════════════════════════════════════════
