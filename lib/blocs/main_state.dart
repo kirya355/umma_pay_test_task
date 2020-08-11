@@ -2,7 +2,7 @@ part of 'main_bloc.dart';
 
 @immutable
 abstract class MainState extends Equatable {
-  final Widget listItems;
+  final List<DocumentSnapshot> listItems;
   MainState(this.listItems);
 
   @override
@@ -10,7 +10,7 @@ abstract class MainState extends Equatable {
 }
 
 class MainInitial extends MainState {
-  MainInitial(Widget listItems) : super(listItems);
+  MainInitial(List<DocumentSnapshot> listItems) : super(listItems);
 }
 
 class NewsViewState extends MainState {
